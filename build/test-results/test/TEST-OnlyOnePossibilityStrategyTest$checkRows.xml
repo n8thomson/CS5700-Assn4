@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="OnlyOnePossibilityStrategyTest$checkRows" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-06-16T05:43:37" hostname="STEEZE1" time="0.005">
+  <properties/>
+  <testcase name="test9x9Failure()" classname="OnlyOnePossibilityStrategyTest$checkRows" time="0.0"/>
+  <testcase name="test4x4Failure()" classname="OnlyOnePossibilityStrategyTest$checkRows" time="0.001"/>
+  <testcase name="test4x4Successful()" classname="OnlyOnePossibilityStrategyTest$checkRows" time="0.0"/>
+  <testcase name="test9x9Successful()" classname="OnlyOnePossibilityStrategyTest$checkRows" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

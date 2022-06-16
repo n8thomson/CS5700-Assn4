@@ -44,41 +44,41 @@ class OnlyOnePossibilityStrategy(var puz: SudokuPuzzle): Strategy() {
     }
 
     fun checkRows(puzzle: SudokuPuzzle): SudokuPuzzle {
-        val charsFound = mutableListOf<String>()
-        val allChars = mutableListOf<String>()
+        val charFound = mutableListOf<String>()
+        val allChar = mutableListOf<String>()
 
         for (y in 0 until puzzle.size) {
             for (z in puzzle.chars) {
-                allChars.add(z)
+                allChar.add(z)
             }
             for (x in 0 until puzzle.size) {
                 if (puzzle.grid[y][x] != "-") {
-                    charsFound.add(puzzle.grid[y][x])
+                    charFound.add(puzzle.grid[y][x])
                 }
             }
 
-            if (charsFound.size + 1 == puzzle.chars.size) {
+            if (charFound.size + 1 == puzzle.chars.size) {
 
-                for (char in charsFound) {
-                    if (allChars.contains(char)) {
-                        allChars.remove(char)
+                for (symbol in charFound) {
+                    if (allChar.contains(symbol)) {
+                        allChar.remove(symbol)
                     }
                 }
 
                 for(x in 0 until puzzle.size) {
                     if (puzzle.grid[y][x] == "-") {
-                        puzzle.grid[y][x] = allChars[0]
+                        puzzle.grid[y][x] = allChar[0]
                     }
                 }
             }
-            charsFound.clear()
-            allChars.clear()
+            charFound.clear()
+            allChar.clear()
         }
 
         return puzzle
     }
 
-    fun checkBlockCommand(puzzle: SudokuPuzzle): SudokuPuzzle {
+    fun checkBlocks(puzzle: SudokuPuzzle): SudokuPuzzle {
         val charsFound = mutableListOf<String>()
         val allChars = mutableListOf<String>()
         val specialNum = sqrt(puzzle.size.toDouble()).toInt()
